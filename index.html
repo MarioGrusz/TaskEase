@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning Planner App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/dist/style.css" />
+    <script defer src="/dist/script.js"></script>
+  </head>
+  <body>
+    <!-- Welcome Page -->
+    <section class="welcome-page__container">
+      <div class="welcome-page__image-container">
+        <img
+          src="https://assets.website-files.com/5bff8886c3964a992e90d465/5c00fa3ad82b40e853c9952f_hero-3.svg"
+          alt="person-is-learning"
+        />
+      </div>
+      <h1 class="welcome-page__title">Learning Helper</h1>
+      <h3 class="welcome-page__subtitle">Manage your learning activity</h3>
+      <h2 class="welcome-page__second-subtitle">
+        Plan, stay focused and learn!
+      </h2>
+      <button class="welcome-page__btn">Get Started</button>
+    </section>
+
+    <!-- Actual Application Page Category/Task -->
+
+    <section class="items-container">
+      <div class="items-container__greetings">
+        <h2 class="items-container__title">
+          Hello, <input type="text" id="name" placeholder="name here" />
+        </h2>
+      </div>
+
+      <div class="items-container__current-date glassmorphism-card">
+        <div class="text-wrapper">
+          <p></p>
+        </div>
+        <div class="image-wrapper">
+          <img src="/assets/timer.png" alt="timer" />
+        </div>
+      </div>
+
+      <div class="items-container__category-container">
+        <!-- Modal -->
+        <input
+          type="radio"
+          name="modal"
+          value="open"
+          id="modal-open"
+          class="modal-radio"
+        />
+        <div class="modal">
+          <label class="modal-label overlay">
+            <input
+              type="radio"
+              name="modal"
+              value="close"
+              class="modal-radio"
+            />
+          </label>
+
+          <div class="content">
+            <div class="top">
+              <h2>Add new category</h2>
+              <label class="modal-label">
+                <input
+                  type="radio"
+                  name="modal"
+                  value="close"
+                  class="modal-radio"
+                />
+                <i class="fa-solid fa-circle-xmark"></i>
+              </label>
+            </div>
+
+            <form id="new-category-form">
+              <div class="input-field">
+                <input id="category-name" type="text" required />
+                <label for="category-name">New Category</label>
+              </div>
+              <input type="submit" value="Add Category" />
+            </form>
+          </div>
+        </div>
+        <!-- End of Modal -->
+
+        <div class="notification-time-box glassmorphism-card">
+          <div class="set-time-box">
+            <div class="set-time-box__content">
+              <button class="btn-close-box">
+                <i class="fa-solid fa-circle-xmark"></i>
+              </button>
+            </div>
+
+            <div class="set-time-box__input-wrapper">
+              <form class="time-form">
+                <input
+                  class="time-value"
+                  id="time-value"
+                  type="input"
+                  placeholder="e.g 20 etc"
+                />
+                <input class="add-value-btn" type="submit" value="Add Time" />
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <p class="title">Add category</p>
+        <p class="subtitle">(e.g. language, coding, reading etc.)</p>
+
+        <p class="category-counter"></p>
+
+        <div class="category-box-container"></div>
+
+        <label for="modal-open" class="round-plus">
+          <i class="fa fa-plus"></i>
+        </label>
+      </div>
+    </section>
+  </body>
+</html>

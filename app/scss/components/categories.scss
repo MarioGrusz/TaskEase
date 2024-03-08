@@ -1,0 +1,196 @@
+@use "../util" as *;
+
+.category-box-container {
+  //anchor to attach dynamic elements
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 2rem;
+  margin-top: 2rem;
+  z-index: 10;
+}
+
+.category-wrapper {
+  display: flex;
+  min-height: 25vh;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  transition: all 0.5s ease;
+}
+
+.category-box {
+  // ID box
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  min-height: 15vh;
+  height: auto;
+  transition: height 1s ease;
+  cursor: pointer;
+  touch-action: pan-y;
+
+  &__task {
+    padding-bottom: 1rem;
+  }
+
+  &__name {
+    border: none;
+    outline: none;
+    font-size: 1.3rem;
+    background-color: transparent;
+    text-align: center;
+    padding-top: 1rem;
+    text-transform: uppercase;
+  }
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 1rem;
+  margin: 1rem 0;
+}
+
+.button-open {
+  margin-top: 0.3rem;
+  padding: 1em 3em;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: var(--c-grey-500);
+  background-color: var(--c-purple-300);
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  width: 100%;
+}
+
+.edit-btn,
+.delete-btn {
+  cursor: pointer;
+  margin: 0 0.5rem;
+
+  padding: 0 1.5rem;
+  color: var(--c-grey-900);
+  font-size: 1rem;
+  border-radius: 45px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-right-color: rgba(255, 255, 255, 0.1);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fall {
+  transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+.tasks-counter {
+  margin: 0;
+  font-size: 0.8rem;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.active {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+}
+
+/* Items/Task To Do Container/Input Form - Create Single Item */
+
+.task-elements-container {
+  display: none;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 1rem;
+
+  border-radius: 50px 50px 0 0;
+  min-height: 100vh;
+  margin-top: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  //glassmorphism
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(16.5px);
+}
+
+.task-input {
+  margin: 0;
+  padding: 0.2rem 1rem;
+  font-size: 1rem;
+  line-height: 1.8rem;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  font-size: 15px;
+  padding-left: 30px;
+  transition: all 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.21);
+  backdrop-filter: blur(15px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 50px;
+}
+
+.task-input:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.task-input::placeholder {
+  color: var(--black);
+}
+
+.task-input:focus {
+  outline: none;
+}
+
+.new-task-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding-top: 4rem;
+}
+
+.create-task-btn {
+  min-height: 35px;
+  width: 50%;
+  align-self: center;
+  font-size: 12px;
+  background-color: var(--c-purple-300);
+  color: var(--c-grey-500);
+  margin: 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+}
